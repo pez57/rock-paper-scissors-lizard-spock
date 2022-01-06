@@ -44,6 +44,10 @@ h1 {
 
 }
 
+.image {
+    max-width: 100%;
+}
+
 
 
 .player {
@@ -58,6 +62,12 @@ h1 {
     
 }
 
+.reset {
+    justify-content: center;
+    display: flex;
+    padding: 1rem;
+}
+
 /*Score board*/
 
 .score-board{
@@ -69,17 +79,24 @@ h1 {
 }
 
 /* Rules */
+.rules-lander {
+    background-color: #f24236;
+}
 
 .rules {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f24236;
+    
 }
 
 .play-now{
     justify-content: center;
     display: flex;
-    background-color: #f24236;
     padding: 1rem;
+}
+
+#play-button {
+    font-size: 1em;
+    padding: .5em;
 }
