@@ -5,6 +5,45 @@ body {
     background-color: #4ea9d0;
 }
 
-div {
-    border-style: double;
+/* Title */
+h1 {
+    text-align: center;
+}
+
+
+/*Game Play Area*/
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.container p {
+    font-size: 50px;
+}
+
+.move {
+    border-radius: 20%;
+    font-size: 2em;
+    padding: .5em;
+    display: inline-block;
+}
+
+.game-area {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+
+}
+
+
+
+.player {
+    background-color: #f24236;
+}
+
+.bot {
+    background-color: #ffd791;
 }
