@@ -8,6 +8,7 @@ body {
 /* Title */
 h1 {
     text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -18,6 +19,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
     margin-top: 1rem;
+    gap: 1.5em;
 }
 
 .container p {
@@ -29,7 +31,11 @@ h1 {
     font-size: 2em;
     padding: .5em;
     display: inline-block;
+    
+
 }
+    
+
 
 .game-area {
     width: 75%;
@@ -42,8 +48,38 @@ h1 {
 
 .player {
     background-color: #f24236;
+    width: 25%;
+
 }
 
 .bot {
     background-color: #ffd791;
+    width: 25%;
+    
+}
+
+/*Score board*/
+
+.score-board{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 10em;
+}
+
+/* Rules */
+
+.rules {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f24236;
+}
+
+.play-now{
+    justify-content: center;
+    display: flex;
+    background-color: #f24236;
+    padding: 1rem;
 }

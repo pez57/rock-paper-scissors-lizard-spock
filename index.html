@@ -17,11 +17,11 @@
     <section class="game-area">
         <div>
             <h2>Choose Your Move</h2>
-            <button class="move"><i class="far fa-hand-rock"></i></button>
-            <button class="move"><i class="far fa-hand-paper"></i></button>
-            <button class="move"><i class="far fa-hand-scissors"></i></button>
-            <button class="move"><i class="far fa-hand-lizard"></i></button>
-            <button class="move"><i class="far fa-hand-spock"></i></button>
+            <button aria-label="rock" class="move"><i class="far fa-hand-rock"></i></button>
+            <button aria-label="paper" class="move"><i class="far fa-hand-paper"></i></button>
+            <button aria-label="scissors" class="move"><i class="far fa-hand-scissors"></i></button>
+            <button aria-label="lizard" class="move"><i class="far fa-hand-lizard"></i></button>
+            <button aria-label="spock" class="move"><i class="far fa-hand-spock"></i></button>
         </div>
     <div class="container">
         <div class="player">
@@ -32,10 +32,72 @@
             <p><i class="far fa-hand-spock"></i></p>            
         </div>
     </div>
-        <div class="scores">
-            <h3>Your score:</h3>
+        <div class="score-board">
+            <div class="scores">
+                <h3>Your score:</h3><span id="your-score">0</span>
+            </div>
+            <div class="scores">
+                <h3>Robot score:</h3><span id="bot-score">0</span>
+            </div>
         </div>
 
+    </section>
+
+    <section class="rules-lander">
+        <h2>Your challenge is to beat the robot!</h2>
+        
+        <div class="rules">
+            <div id=rock-rules>
+                <ul>
+                    <h3>Rock <i class="far fa-hand-rock"></i></h3>
+                    <li>Rock destroys Scissors <i class="fas fa-check-circle"></i></li>
+                    <li>Rock crushes Lizard <i class="fas fa-check-circle"></i></li>
+                    <li>Paper covers Rock <i class="fas fa-times-circle"></i></li>
+                    <li>Spock vaporises Rock <i class="fas fa-times-circle"></i></li>
+                </ul>
+            </div>
+            <div id=paper-rules>
+                <ul>
+                    <h3>Paper <i class="far fa-hand-paper"></i></h3>
+                    <li>Paper covers Rock <i class="fas fa-check-circle"></i></li>
+                    <li>Paper disproves Spock <i class="fas fa-check-circle"></i></li>
+                    <li>Scissors cut Paper <i class="fas fa-times-circle"></i></li>
+                    <li>Lizard eats Paper <i class="fas fa-times-circle"></i></li>
+                </ul>
+            </div>
+            <div id=scissors-rules>
+                <ul>
+                    <h3>Scissors <i class="far fa-hand-scissors"></i></h3>
+                    <li>Scissors cut Paper <i class="fas fa-check-circle"></i></li>
+                    <li>Scissors decapitate Lizard <i class="fas fa-check-circle"></i></li>
+                    <li>Rock destroys Scissors <i class="fas fa-times-circle"></i></li>
+                    <li>Spock desptroys Scissors <i class="fas fa-times-circle"></i></li>
+                </ul>
+            </div>
+            <div id=lizard-rules>
+                <ul>
+                    <h3>Lizard <i class="far fa-hand-lizard"></i></h3>
+                    <li>Lizard eats Paper <i class="fas fa-check-circle"></i></li>
+                    <li>Lizard poisons Spock <i class="fas fa-check-circle"></i></li>
+                    <li>Rock crushes Lizard <i class="fas fa-times-circle"></i></li>
+                    <li>Scissors decapitate Lizard <i class="fas fa-times-circle"></i></li>
+                </ul>
+            </div>
+            <div id=spock-rules>
+                <ul>
+                    <h3>Spock <i class="far fa-hand-spock"></i></h3>
+                    <li>Spock destroys Scissors <i class="fas fa-check-circle"></i></li>
+                    <li>Spock vaporises Rock <i class="fas fa-check-circle"></i></li>
+                    <li>Paper disproves Spock <i class="fas fa-times-circle"></i></li>
+                    <li>Lizard poisons Spock <i class="fas fa-times-circle"></i></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="play-now"><button aria-label="play" id="play-button">Play Now!</button>
+        </div>
+        
+        
     </section>
    
     
