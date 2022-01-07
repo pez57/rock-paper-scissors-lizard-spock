@@ -93,7 +93,12 @@ button:hover {
 /* Rules */
 .rules-lander {
     background-color: #f24236;
-    color: white;
+    color: #d9dbf1;
+}
+
+.rules-lander, h2 {
+    text-align: center;
+    padding-top: 10px;
 }
 
 .rules {
