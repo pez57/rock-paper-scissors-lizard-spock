@@ -5,6 +5,7 @@
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #4ea9d0;
+    color: #1c1d21;
 }
 
 /* Title */
@@ -36,6 +37,13 @@ h1 {
     font-size: 3rem;
     display: inline-block;
     border: solid 5px;
+    color: #1c1d21;
+    background-color: #d9dbf1;
+}
+
+button:hover {
+    background-color: #1c1d21;
+    color: #d9dbf1;
 }
 
 
@@ -44,7 +52,7 @@ h1 {
     width: 75%;
     margin: auto;
     text-align: center;
-    background-color: #ffd791;
+    background-color: #e1dd8f;
 
 }
 
