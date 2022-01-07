@@ -21,11 +21,11 @@
 
         <div>
             <h2>Choose Your Move</h2>
-            <button aria-label="rock" class="move move-rock"><i class="far fa-hand-rock"></i></button>
-            <button aria-label="paper" class="move move-paper"><i class="far fa-hand-paper"></i></button>
-            <button aria-label="scissors" class="move move-scissors"><i class="far fa-hand-scissors"></i></button>
-            <button aria-label="lizard" class="move move-lizard"><i class="far fa-hand-lizard"></i></button>
-            <button aria-label="spock" class="move move-spock"><i class="far fa-hand-spock"></i></button>
+            <button aria-label="rock" class="move move-rock" data-type="rock" ><i class="far fa-hand-rock"></i></button>
+            <button aria-label="paper" class="move move-paper" data-type="paper"><i class="far fa-hand-paper"></i></button>
+            <button aria-label="scissors" class="move move-scissors" data-type="scissors"><i class="far fa-hand-scissors"></i></button>
+            <button aria-label="lizard" class="move move-lizard" data-type="lizard"><i class="far fa-hand-lizard"></i></button>
+            <button aria-label="spock" class="move move-spock" data-type="spock"><i class="far fa-hand-spock"></i></button>
         </div>
         <div class="container">
             <div class="player">
@@ -46,7 +46,7 @@
             </div>
         </div>
         </div>
-        <div class="reset"><button aria-label="reset" id="reset-button">Reset</button>
+        <div class="reset"><button aria-label="reset" id="reset-button" data-type="reset">Reset</button>
         </div>
 
     </section>
@@ -102,7 +102,7 @@
 
             </div>
         </div>
-        <div class="play-now"><button aria-label="play" id="play-button">Play Now!</button>
+        <div class="play-now"><button aria-label="play" id="play-button" data-type="play">Play Now!</button>
         </div>
 
 

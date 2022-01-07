@@ -1,4 +1,6 @@
+/*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 body {
     font-family: 'Orbitron', sans-serif;
@@ -42,6 +44,7 @@ h1 {
     width: 75%;
     margin: auto;
     text-align: center;
+    background-color: #ffd791;
 
 }
 
@@ -58,7 +61,7 @@ h1 {
 }
 
 .bot {
-    background-color: #ffd791;
+    background-color: #f24236;
     width: 25%;
 
 }
@@ -82,6 +85,7 @@ h1 {
 /* Rules */
 .rules-lander {
     background-color: #f24236;
+    color: white;
 }
 
 .rules {
@@ -101,3 +105,10 @@ h1 {
     font-size: 1em;
     padding: .5em;
 }
+
+li {
+    font-family: "Roboto", sans-serif;
+}
+
+/*Media queries*/
+
