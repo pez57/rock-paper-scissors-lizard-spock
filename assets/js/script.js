@@ -23,8 +23,11 @@ function playGame(playerMove) {
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
     <i class="far fa-hand-${playerMove}"></i>
     `;
-    let robotRandom = Math.floor(Math.random() * 5);
-
+    const robotRandom = Math.floor(Math.random() * moves.length);
+    const robotMove = moves[robotRandom];
+    robotChoice.innerHTML = `<div>You chose ${robotMove}</div>
+    <i class="far fa-hand-${robotMove}"></i>
+    `;
 }
 
 /* function playerMove()
