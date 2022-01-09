@@ -50,9 +50,13 @@ function calculateWinner(player, robot) {
     }
 
     if (hasPlayerWon) {
-       let currentScore = yourScore.innerHTML
-       console.log(currentScore++);
-          yourScore.innerHTML = currentScore++;
+       let currentScore = yourScore.innerHTML;
+          currentScore++;
+          yourScore.innerHTML = currentScore;
+    } else {
+        let currentBotScore = botScore.innerHTML;
+        currentBotScore++;
+        botScore.innerHTML = currentBotScore;
     }
 }
 
