@@ -25,21 +25,39 @@ function playGame(playerMove) {
     `;
     const robotRandom = Math.floor(Math.random() * moves.length);
     const robotMove = moves[robotRandom];
-    robotChoice.innerHTML = `<div>You chose ${robotMove}</div>
+    robotChoice.innerHTML = `<div>Robot chose ${robotMove}</div>
     <i class="far fa-hand-${robotMove}"></i>
     `;
+
+    calculateWinner(playerMove, robotMove);
 }
 
-/* function playerMove()
+function calculateWinner(player, robot) {
+    let hasPlayerWon = false;
+
+    if (player === robot) {
+        return;
+    } else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
+        hasPlayerWon = true;
+    } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
+        hasPlayerWon = true;
+    } else if (player === "scissors" && (robot === "paper" || robot === "lizard")) {
+        hasPlayerWon = true;
+    } else if (player === "lizard" && (robot === "paper" || robot === "spock")) {
+        hasPlayerWon = true;
+    } else if (player === "spock" && (robot === "scissors" || robot === "rock")) {
+        hasPlayerWon = true; 
+    }
+
+    if (hasPlayerWon) {
+       let currentScore = yourScore.innerHTML
+       console.log(currentScore++);
+          yourScore.innerHTML = currentScore++;
+    }
+}
 
 
-function robotMove()
-
-
-function calculateWinner()
-
-
-function iterateScore()
+/*function iterateScore()
 
 
 function roundWinner()
