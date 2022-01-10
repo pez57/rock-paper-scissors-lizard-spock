@@ -23,12 +23,12 @@ for (let button of moveButtons) {
 
 function playGame(playerMove) {
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
-    <i class="far fa-hand-${playerMove}"></i>
+    <i class="rule-icon far fa-hand-${playerMove}"></i>
     `;
     const robotRandom = Math.floor(Math.random() * moves.length);
     const robotMove = moves[robotRandom];
     robotChoice.innerHTML = `<div>Robot chose ${robotMove}</div>
-    <i class="far fa-hand-${robotMove}"></i>
+    <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
 
     calculateWinner(playerMove, robotMove);

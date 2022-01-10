@@ -41,6 +41,7 @@ h1 {
     background-color: #d9dbf1;
 }
 
+
 button:hover {
     background-color: #1c1d21;
     color: #d9dbf1;
@@ -57,7 +58,7 @@ button:hover {
 }
 
 .image {
-    max-width: 100%;
+    max-width: 75%;
 }
 
 
@@ -79,6 +80,23 @@ button:hover {
     display: flex;
     padding: 1rem;
 }
+
+#reset-button {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    padding: 1rem;
+    border-radius: 10%;
+    border: solid 5px;
+    color: #1c1d21;
+}
+
+#reset-button:hover {
+    background-color: #1c1d21;
+    color: #d9dbf1;
+
+}
+
+
 
 /*Score board*/
 
@@ -121,7 +139,30 @@ button:hover {
 
 li {
     font-family: "Roboto", sans-serif;
+    
+}
+
+.rule-icon {
+    font-size: 250%;
+    padding-left: 5px;
+}
+
+.score-number {
+    font-size: 250%
 }
 
 /*Media queries*/
 
+@media (max-width: 1230px) {
+    .rules {
+        flex-direction: column;
+    }
+    li {
+        list-style-type: none;
+        letter-spacing: 2px;
+    }
+    h3 {
+        letter-spacing: 2px;
+    }
+
+}
