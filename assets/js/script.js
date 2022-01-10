@@ -1,5 +1,4 @@
 // const DOM elements
-
 const moveButtons = document.getElementsByClassName("move");
 const moves = ["rock", "paper", "scissors", "lizard", "spock"];
 const yourScore = document.getElementById("your-score");
@@ -7,27 +6,27 @@ const botScore = document.getElementById("bot-score");
 const resetButton = document.getElementById("reset-button");
 const playerChoice = document.getElementById("player-choice");
 const robotChoice = document.getElementById("robot-choice");
+let robotScore = 0;
+let playerScore = 0;
 
 
 // Add event listeners to move buttons
-
 for (let button of moveButtons) {
     button.addEventListener("click", function(event) {
-     event.preventDefault();
-     let move = this.getAttribute("data-type");
-     playGame(move);
+        event.preventDefault();
+        let move = this.getAttribute("data-type");
+        playGame(move);
     });
 }
 
 // Add Event listener to Reset button
-
 resetButton.addEventListener("click", function() {
     resetGame();
-
 });
 
-// Main game functions
-
+/* 
+Main game functions
+*/
 function playGame(playerMove) {
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
     <i class="rule-icon far fa-hand-${playerMove}"></i>
@@ -46,7 +45,11 @@ function calculateWinner(player, robot) {
 
     if (player === robot) {
         alert("It's a draw! Try again");
-    } else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
+        return;
+    } 
+
+    // Game logic
+    else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
         hasPlayerWon = true;
     } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
         hasPlayerWon = true;
@@ -58,19 +61,24 @@ function calculateWinner(player, robot) {
         hasPlayerWon = true; 
     }
 
+    // Update score
     if (hasPlayerWon) {
-       let currentScore = yourScore.innerHTML;
-          currentScore++;
-          yourScore.innerHTML = currentScore;
+        playerScore++;
     } else {
-        let currentBotScore = botScore.innerHTML;
-        currentBotScore++;
-        botScore.innerHTML = currentBotScore;
+        robotScore++;
     }
+
+    updateScoreView();
+}
+
+function updateScoreView() {
+    botScore.innerHTML = playerScore;
+    yourScore.innerHTML = robotScore;
 }
 
 function resetGame() {
-    botScore.innerHTML = "0";
-    yourScore.innerHTML = "0";
-}
 
+    playerScore = 0;
+    robotScore = 0;
+    updateScoreView();
+}
