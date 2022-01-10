@@ -10,7 +10,7 @@ const robotChoice = document.getElementById("robot-choice");
 
 
 // Add event listeners to buttons
-//target vales to be removed on html
+
 for (let button of moveButtons) {
     button.addEventListener("click", function(event) {
      event.preventDefault();
@@ -18,6 +18,8 @@ for (let button of moveButtons) {
      playGame(move);
     });
 }
+
+// Main game function
 
 function playGame(playerMove) {
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
@@ -36,7 +38,7 @@ function calculateWinner(player, robot) {
     let hasPlayerWon = false;
 
     if (player === robot) {
-        return;
+        alert("It's a draw! Try again");
     } else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
         hasPlayerWon = true;
     } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
@@ -61,8 +63,6 @@ function calculateWinner(player, robot) {
 }
 
 
-/*function iterateScore()
-
-
+/*
 function roundWinner()
 */
