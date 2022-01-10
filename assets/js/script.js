@@ -9,7 +9,7 @@ const playerChoice = document.getElementById("player-choice");
 const robotChoice = document.getElementById("robot-choice");
 
 
-// Add event listeners to buttons
+// Add event listeners to move buttons
 
 for (let button of moveButtons) {
     button.addEventListener("click", function(event) {
@@ -19,7 +19,14 @@ for (let button of moveButtons) {
     });
 }
 
-// Main game function
+// Add Event listener to Reset button
+
+resetButton.addEventListener("click", function() {
+    resetGame();
+
+});
+
+// Main game functions
 
 function playGame(playerMove) {
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
@@ -62,7 +69,8 @@ function calculateWinner(player, robot) {
     }
 }
 
+function resetGame() {
+    botScore.innerHTML = "0";
+    yourScore.innerHTML = "0";
+}
 
-/*
-function roundWinner()
-*/
