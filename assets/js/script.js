@@ -96,6 +96,9 @@ const closeBtn = document.getElementById("close-btn");
 modalBtn.addEventListener("click", openModal);
 //event listener for close modal click
 closeBtn.addEventListener("click", closeModal);
+//event listener for outside box click
+window.addEventListener("click", outerClick);
+
 //Function to open modal
 function openModal(){
     modal.style.display = "block";
@@ -103,5 +106,11 @@ function openModal(){
 //Function to close modal
 function closeModal(){
     modal.style.display = "none";
+}
+//Fuction to close modal if outer area is clicked
+function outerClick(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
 }
 
