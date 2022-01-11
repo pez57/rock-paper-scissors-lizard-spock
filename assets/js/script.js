@@ -82,3 +82,26 @@ function resetGame() {
     robotScore = 0;
     updateScoreView();
 }
+
+
+
+//get modal element
+const modal = document.getElementById("score-modal");
+//get open modal button
+const modalBtn = document.getElementById("high-score-button");
+//get close button
+const closeBtn = document.getElementById("close-btn");
+
+//event listener for open modal click
+modalBtn.addEventListener("click", openModal);
+//event listener for close modal click
+closeBtn.addEventListener("click", closeModal);
+//Function to open modal
+function openModal(){
+    modal.style.display = "block";
+}
+//Function to close modal
+function closeModal(){
+    modal.style.display = "none";
+}
+
