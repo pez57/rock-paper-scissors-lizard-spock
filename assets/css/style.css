@@ -71,17 +71,14 @@ button:hover {
 
 
 .player {
-    background-color: #f24236;
     width: 25%;
     color: black;
 
 }
 
-.bot {
-    background-color: #f24236;
-    width: 25%;
-    color: black;
-
+.player .rule-icon {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .reset {
@@ -114,7 +111,7 @@ button:hover {
     flex-direction: row;
     justify-content: center;
     margin-top: 1rem;
-    gap: 10em;
+    gap: 13em;
 }
 
 /* Rules */
