@@ -72,8 +72,8 @@ function calculateWinner(player, robot) {
 }
 
 function updateScoreView() {
-    botScore.innerHTML = playerScore;
-    yourScore.innerHTML = robotScore;
+    yourScore.innerHTML = playerScore;
+    botScore.innerHTML = robotScore;
 }
 
 function resetGame() {
@@ -113,4 +113,32 @@ function outerClick(event){
         modal.style.display = "none";
     }
 }
+
+/*
+High Scores
+*/
+const inpName = document.getElementById("input-name");
+const submitBtn = document.getElementById("submit-btn");
+const highScores = document.querySelector(".high-scores");
+
+submitBtn.onclick = function() {
+    const key = inpName.value;
+    const value = playerScore;
+
+    if (key && value) {
+        localStorage.setItem(key, value);
+        location.reload()
+        openModal();
+    }
+};
+
+for (let i = 0; i < localStorage.length; i++) {
+    
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+
+    highScores.innerHTML += `${key}: ${value}<br/>`;
+
+}
+
 
