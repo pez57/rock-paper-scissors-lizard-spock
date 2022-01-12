@@ -53,14 +53,24 @@
         <div class="reset">
             <button aria-label="reset" class="button" id="reset-button" data-type="reset">Reset</button>
         </div>
-        <div class="high-score">
+        <div class="high-score reset">
             <button aria-label="high-score" class="button" id="high-score-button" data-type="high-score">High Score</button>
         </div>
 
         <div id="score-modal" class="modal">
             <div class="modal-content">
                 <span id="close-btn">&times;</span>
-                <p>This is where the score board will go</p>
+                <fieldset>
+                    <legend>Enter Your Name</legend>
+                    <input id="input-name" type="text" placeholder="Your name...">
+                    <button type="button" id="submit-btn">Submit</button>
+                </fieldset>
+                <fieldset>
+                    <legend>High Scores</legend>
+                    <div class="high-scores">
+
+                    </div>
+                </fieldset>
             </div>
         </div>
 
