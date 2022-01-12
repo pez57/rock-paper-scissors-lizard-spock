@@ -57,6 +57,7 @@ h1 {
     font-size: 3rem;
     display: inline-block;
     border: solid 5px;
+    border-color: #4ea9d0;
     color: #1c1d21;
     background-color: #d9dbf1;
 }
@@ -73,7 +74,7 @@ button:hover {
     width: 75%;
     margin: auto;
     text-align: center;
-    /*background-color: #e1dd8f;*/
+    background-color: rgb(78,169,208, 0.3);
 
 }
 
@@ -105,6 +106,7 @@ button:hover {
     padding: 1rem;
     border-radius: 10%;
     border: solid 3px;
+    border-color: #4ea9d0;
     color: #1c1d21;
 }
 
@@ -185,6 +187,8 @@ li {
     float: right;
     font-size: 30px;
 }
+
+
 
 #close-btn:hover, .close-btn:focus{
     color: #4ea9d0;
