@@ -15,6 +15,11 @@
             <h1>Rock Paper Scissors Lizard Spock</h1>
         </div>
     </header>
+    <div id="videoContainer">
+        <video autoplay muted loop id="myMainVideo">
+            <source src="assets/images/space.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <section class="game-area">
         <div class="play-background">
@@ -49,14 +54,15 @@
                 <h3>Robot score:</h3><span class="score-number" id="bot-score">0</span>
             </div>
         </div>
+        <div class="container">
+            <div class="reset">
+                <button aria-label="reset" class="button" id="reset-button" data-type="reset">Reset</button>
+            </div>
+            <div class="high-score reset">
+                <button aria-label="score-board" class="button" id="high-score-button" data-type="high-score">Score
+                    Board</button>
+            </div>
         </div>
-        <div class="reset">
-            <button aria-label="reset" class="button" id="reset-button" data-type="reset">Reset</button>
-        </div>
-        <div class="high-score reset">
-            <button aria-label="high-score" class="button" id="high-score-button" data-type="high-score">High Scores</button>
-        </div>
-
         <div id="score-modal" class="modal">
             <div class="modal-content">
                 <span id="close-btn">&times;</span>
@@ -66,7 +72,7 @@
                     <button type="button" id="submit-btn">Submit</button>
                 </fieldset>
                 <fieldset>
-                    <legend>High Scores</legend>
+                    <legend>Score Board</legend>
                     <div class="high-scores"></div>
                 </fieldset>
             </div>

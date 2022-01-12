@@ -1,4 +1,6 @@
-// const DOM elements
+/*
+const DOM elements
+*/
 const moveButtons = document.getElementsByClassName("move");
 const moves = ["rock", "paper", "scissors", "lizard", "spock"];
 const yourScore = document.getElementById("your-score");
@@ -9,20 +11,23 @@ const robotChoice = document.getElementById("robot-choice");
 let robotScore = 0;
 let playerScore = 0;
 
-
-// Add event listeners to move buttons
+/*
+Add event listeners to move buttons
+*/
 for (let button of moveButtons) {
-    button.addEventListener("click", function(event) {
+    button.addEventListener("click", function (event) {
         event.preventDefault();
         let move = this.getAttribute("data-type");
         playGame(move);
     });
 }
-
-// Add Event listener to Reset button
-resetButton.addEventListener("click", function() {
+/*
+Add Event listener to Reset button
+*/
+resetButton.addEventListener("click", function () {
     resetGame();
 });
+
 
 /* 
 Main game functions
@@ -46,9 +51,11 @@ function calculateWinner(player, robot) {
     if (player === robot) {
         alert("It's a draw! Try again");
         return;
-    } 
+    }
 
-    // Game logic
+    /*
+     Game logic
+     */
     else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
         hasPlayerWon = true;
     } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
@@ -58,10 +65,12 @@ function calculateWinner(player, robot) {
     } else if (player === "lizard" && (robot === "paper" || robot === "spock")) {
         hasPlayerWon = true;
     } else if (player === "spock" && (robot === "scissors" || robot === "rock")) {
-        hasPlayerWon = true; 
+        hasPlayerWon = true;
     }
 
-    // Update score
+    /* 
+    Update score
+    */
     if (hasPlayerWon) {
         playerScore++;
     } else {
@@ -83,14 +92,16 @@ function resetGame() {
     updateScoreView();
 }
 
+/*
+Modal open close function
+*/
 
 
-//get modal element
-const modal = document.getElementById("score-modal");
-//get open modal button
-const modalBtn = document.getElementById("high-score-button");
-//get close button
-const closeBtn = document.getElementById("close-btn");
+const modal = document.getElementById("score-modal"); //get modal element
+
+const modalBtn = document.getElementById("high-score-button");//get open modal button
+
+const closeBtn = document.getElementById("close-btn"); //get close button
 
 //event listener for open modal click
 modalBtn.addEventListener("click", openModal);
@@ -100,28 +111,28 @@ closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
 //Function to open modal
-function openModal(){
+function openModal() {
     modal.style.display = "block";
 }
 //Function to close modal
-function closeModal(){
+function closeModal() {
     modal.style.display = "none";
 }
 //Fuction to close modal if outer area is clicked
-function outerClick(event){
-    if(event.target == modal){
+function outerClick(event) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
 /*
-High Scores
+Score Board
 */
 const inpName = document.getElementById("input-name");
 const submitBtn = document.getElementById("submit-btn");
 const highScores = document.querySelector(".high-scores");
 
-submitBtn.onclick = function() {
+submitBtn.onclick = function () {
     const key = inpName.value;
     const value = playerScore;
 
@@ -133,12 +144,10 @@ submitBtn.onclick = function() {
 };
 
 for (let i = 0; i < localStorage.length; i++) {
-    
+
     const key = localStorage.key(i);
     const value = localStorage.getItem(key);
 
     highScores.innerHTML += `${key}: ${value}<br/>`;
 
 }
-
-
