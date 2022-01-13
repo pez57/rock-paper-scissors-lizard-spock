@@ -126,18 +126,18 @@ function outerClick(event) {
 }
 
 /*
-Score Board
+Score Board Content
 */
 const inpName = document.getElementById("input-name");
 const submitBtn = document.getElementById("submit-btn");
 const highScores = document.querySelector(".high-scores");
 
 submitBtn.onclick = function () {
-    const key = inpName.value;
-    const value = playerScore;
+    const name = inpName.value;
+    const score = playerScore;
 
-    if (key && value) {
-        localStorage.setItem(key, value);
+    if (name && score) {
+        localStorage.setItem(name, score);
         location.reload()
         openModal();
     }
@@ -145,9 +145,9 @@ submitBtn.onclick = function () {
 
 for (let i = 0; i < localStorage.length; i++) {
 
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
+    const name = localStorage.score(i);
+    const score = localStorage.getItem(name);
 
-    highScores.innerHTML += `${key}: ${value}<br/>`;
+    highScores.innerHTML += `${name}: ${score}<br/>`;
 
 }

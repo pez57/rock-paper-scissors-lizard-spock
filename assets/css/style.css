@@ -79,7 +79,7 @@ button:hover {
 }
 
 .image {
-    max-width: 75%;
+    max-width: 50%;
 }
 
 
@@ -177,7 +177,7 @@ li {
 .modal-content{
     background-color: #d9dbf1;
     margin: 5% auto;
-    padding: 5%;
+    padding: 10px;
     width: 50%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
 }
