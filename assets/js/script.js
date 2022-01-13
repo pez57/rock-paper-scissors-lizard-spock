@@ -133,11 +133,11 @@ const submitBtn = document.getElementById("submit-btn");
 const highScores = document.querySelector(".high-scores");
 
 submitBtn.onclick = function () {
-    const name = inpName.value;
-    const score = playerScore;
+    const key = inpName.value;
+    const value = playerScore;
 
-    if (name && score) {
-        localStorage.setItem(name, score);
+    if (key && value) {
+        localStorage.setItem(key, value);
         location.reload()
         openModal();
     }
@@ -145,9 +145,16 @@ submitBtn.onclick = function () {
 
 for (let i = 0; i < localStorage.length; i++) {
 
-    const name = localStorage.score(i);
-    const score = localStorage.getItem(name);
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
 
-    highScores.innerHTML += `${name}: ${score}<br/>`;
+    highScores.innerHTML += `${key}: ${value}<br/>`;
 
 }
+
+/*
+Slow video play rate
+ */
+
+document.querySelector('video').playbackRate = 0.75;
+

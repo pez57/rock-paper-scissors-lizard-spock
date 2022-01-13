@@ -31,8 +31,8 @@ h1 {
     text-transform: uppercase;
     font-size: 3em;
     letter-spacing: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
@@ -135,7 +135,7 @@ button:hover {
 
 .rules-lander, h2 {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .rules {
