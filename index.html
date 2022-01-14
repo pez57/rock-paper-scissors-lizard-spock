@@ -20,7 +20,7 @@
             <source src="assets/images/space.mp4" type="video/mp4">
         </video>
     </div>
-
+    <!-- Game Play Area -->
     <section class="game-area">
         <div class="play-background">
             <h2>Choose Your Move</h2>
@@ -38,12 +38,12 @@
             <div class="player">
                 <h3>Player</h3>
                 <div id="player-choice"></div>
-                <img class="image" src="./assets/images/player.png" alt="player-image">
+                <img id="img" class="image" src="./assets/images/player.png" alt="player-image">
             </div>
             <div class="player">
                 <h3>Robot</h3>
                 <div id="robot-choice"></div>
-                <img class="image" src="./assets/images/robot.png" alt="robot-image">
+                <img id="img" class="image" src="./assets/images/robot.png" alt="robot-image">
             </div>
         </div>
         <div class="score-board">
@@ -63,9 +63,11 @@
                     Board</button>
             </div>
         </div>
+
+        <!-- Score modal -->
         <div id="score-modal" class="modal">
             <div class="modal-content">
-                <span id="close-btn">   &times;</span>
+                <span id="close-btn"> <i class="fas fa-window-close"></i></span>
                 <fieldset>
                     <legend>Enter Your Name</legend>
                     <input id="input-name" type="text" placeholder="Your name...">
@@ -79,7 +81,7 @@
         </div>
 
     </section>
-
+    <!-- Rules Section -->
     <section class="rules-lander">
         <h2>Your challenge is to beat the robot!</h2>
 

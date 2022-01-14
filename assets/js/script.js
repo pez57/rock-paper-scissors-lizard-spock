@@ -11,6 +11,7 @@ const robotChoice = document.getElementById("robot-choice");
 let robotScore = 0;
 let playerScore = 0;
 
+
 /*
 Add event listeners to move buttons
 */
@@ -21,6 +22,8 @@ for (let button of moveButtons) {
         playGame(move);
     });
 }
+
+
 /*
 Add Event listener to Reset button
 */
@@ -41,7 +44,6 @@ function playGame(playerMove) {
     robotChoice.innerHTML = `<div>Robot chose ${robotMove}</div>
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
-
     calculateWinner(playerMove, robotMove);
 }
 
@@ -92,15 +94,15 @@ function resetGame() {
     updateScoreView();
 }
 
+
+
 /*
-Modal open close function
+Modal open close functions
 */
 
 
 const modal = document.getElementById("score-modal"); //get modal element
-
 const modalBtn = document.getElementById("high-score-button");//get open modal button
-
 const closeBtn = document.getElementById("close-btn"); //get close button
 
 //event listener for open modal click
@@ -110,20 +112,22 @@ closeBtn.addEventListener("click", closeModal);
 //event listener for outside box click
 window.addEventListener("click", outerClick);
 
-//Function to open modal
+
 function openModal() {
     modal.style.display = "block";
 }
-//Function to close modal
+
 function closeModal() {
     modal.style.display = "none";
 }
-//Fuction to close modal if outer area is clicked
+
 function outerClick(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+
+
 
 /*
 Score Board Content
@@ -149,7 +153,7 @@ for (let i = 0; i < localStorage.length; i++) {
     const value = localStorage.getItem(key);
 
     highScores.innerHTML += `${key}: ${value}<br/>`;
-
+  
 }
 
 /*
@@ -157,4 +161,5 @@ Slow video play rate
  */
 
 document.querySelector('video').playbackRate = 0.75;
+
 
