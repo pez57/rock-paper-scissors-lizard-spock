@@ -8,6 +8,7 @@ const botScore = document.getElementById("bot-score");
 const resetButton = document.getElementById("reset-button");
 const playerChoice = document.getElementById("player-choice");
 const robotChoice = document.getElementById("robot-choice");
+const avatars = document.getElementsByClassName("avatar");
 let robotScore = 0;
 let playerScore = 0;
 
@@ -19,15 +20,22 @@ for (let button of moveButtons) {
     button.addEventListener("click", function (event) {
         event.preventDefault();
         let move = this.getAttribute("data-type");
+        showAvatar(true);
         playGame(move);
     });
 }
 
+function showAvatar(shouldHide) {
+    for (let avatar of avatars) {
+        avatar.style.display = shouldHide ? "none" : "inline-block"; 
+    }
+}
 
 /*
 Add Event listener to Reset button
 */
 resetButton.addEventListener("click", function () {
+    showAvatar(false);
     resetGame();
 });
 
@@ -105,15 +113,20 @@ const modal = document.getElementById("score-modal"); //get modal element
 const modalBtn = document.getElementById("high-score-button");//get open modal button
 const closeBtn = document.getElementById("close-btn"); //get close button
 
-//event listener for open modal click
+//event listeners for open and close modal on click
 modalBtn.addEventListener("click", openModal);
-//event listener for close modal click
 closeBtn.addEventListener("click", closeModal);
-//event listener for outside box click
 window.addEventListener("click", outerClick);
 
 
 function openModal() {
+    highScoresContainer.innerHTML = "";
+    for (let i = 0; i <= 9; i++) {
+
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        highScoresContainer.innerHTML += `${key}: ${value}<br/>`;
+    }
     modal.style.display = "block";
 }
 
@@ -132,9 +145,11 @@ function outerClick(event) {
 /*
 Score Board Content
 */
+
 const inpName = document.getElementById("input-name");
 const submitBtn = document.getElementById("submit-btn");
-const highScores = document.querySelector(".high-scores");
+const highScoresContainer = document.querySelector(".high-scores");
+let highScores = {};
 
 submitBtn.onclick = function () {
     const key = inpName.value;
@@ -142,19 +157,10 @@ submitBtn.onclick = function () {
 
     if (key && value) {
         localStorage.setItem(key, value);
-        location.reload()
         openModal();
     }
 };
 
-for (let i = 0; i < localStorage.length; i++) {
-
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-
-    highScores.innerHTML += `${key}: ${value}<br/>`;
-  
-}
 
 /*
 Slow video play rate
