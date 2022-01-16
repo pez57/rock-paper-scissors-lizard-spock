@@ -122,8 +122,16 @@ window.addEventListener("click", outerClick);
 function readScores() {
     let scoresJson = localStorage.getItem("highScores");
     let scores = JSON.parse(scoresJson);
+
+    if (!scores) { // If local storage is null create empty array
+        scores = [];
+    }
     return scores;
 
+}
+
+function sortScores(a, b) {
+    return b.score - a.score;
 }
 
 function openModal() {
@@ -132,11 +140,14 @@ function openModal() {
 
     if (scores.length > 0) {
         let loopLimit = scores.length < 10 ? scores.length - 1 : 9;
+
+        scores.sort(sortScores);
+
         for (let i = 0; i <= loopLimit; i++) {
 
             const name = scores[i].player;
             const scoreValue = scores[i].score;
-            highScoresContainer.innerHTML += `${name}: ${scoreValue}<br/>`;
+            highScoresContainer.innerHTML += `${i + 1}. ${name}: ${scoreValue}<br/>`;
         }
     } else {
         highScoresContainer.innerHTML = "No high scores. Play some more!"
