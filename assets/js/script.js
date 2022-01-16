@@ -11,6 +11,7 @@ const robotChoice = document.getElementById("robot-choice");
 const avatars = document.getElementsByClassName("avatar");
 let robotScore = 0;
 let playerScore = 0;
+let highScores = readScores();
 
 
 /*
@@ -118,14 +119,27 @@ modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
+function readScores() {
+    let scoresJson = localStorage.getItem("highScores");
+    let scores = JSON.parse(scoresJson);
+    return scores;
+
+}
 
 function openModal() {
     highScoresContainer.innerHTML = "";
-    for (let i = 0; i <= 9; i++) {
+    let scores =  readScores();
 
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
-        highScoresContainer.innerHTML += `${key}: ${value}<br/>`;
+    if (scores.length > 0) {
+        let loopLimit = scores.length < 10 ? scores.length - 1 : 9;
+        for (let i = 0; i <= loopLimit; i++) {
+
+            const name = scores[i].player;
+            const scoreValue = scores[i].score;
+            highScoresContainer.innerHTML += `${name}: ${scoreValue}<br/>`;
+        }
+    } else {
+        highScoresContainer.innerHTML = "No high scores. Play some more!"
     }
     modal.style.display = "block";
 }
@@ -149,14 +163,18 @@ Score Board Content
 const inpName = document.getElementById("input-name");
 const submitBtn = document.getElementById("submit-btn");
 const highScoresContainer = document.querySelector(".high-scores");
-let highScores = {};
+
 
 submitBtn.onclick = function () {
-    const key = inpName.value;
-    const value = playerScore;
 
-    if (key && value) {
-        localStorage.setItem(key, value);
+    const player = inpName.value;
+    const score = playerScore;
+
+    if (player && score) {
+        highScores.push({
+            player, score
+        });
+        localStorage.setItem("highScores", JSON.stringify(highScores));
         openModal();
     }
 };
