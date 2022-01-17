@@ -9,11 +9,12 @@ const resetButton = document.getElementById("reset-button");
 const playerChoice = document.getElementById("player-choice");
 const robotChoice = document.getElementById("robot-choice");
 const avatars = document.getElementsByClassName("avatar");
+const bothChoices = document.getElementsByClassName("show-choices");
 let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
 let trackTurns = 1;
-let bothChoices = document.getElementsByClassName("show-choices");
+
 
 /*
 Add event listeners to move buttons
@@ -41,6 +42,7 @@ resetButton.addEventListener("click", function () {
     showAvatar(false);
     showChoices(false);
     resetGame();
+    resetTurns();
 });
 
 function showChoices(shouldHide) { //Hide choices when reset is clicked and show when game starts again
@@ -63,19 +65,23 @@ function playGame(playerMove) {
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
     calculateWinner(playerMove, robotMove);
-    //countTurns(trackTurns);
+    countTurns(trackTurns);
 }
 
-// function countTurns() {
-//     let turnsNum = document.getElementById("game-rounds");
-//     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
+function countTurns() {
+    let turnsNum = document.getElementById("game-rounds");
+    turnsNum.innerHTML = `Round ${trackTurns++}/10`;
 
-//     if (trackTurns === 11) {
-//         openModal();
-//         resetGame();
+    if (trackTurns === 11) {
+        openModal();
+        
+    }    
+}
+
+// function lostGame() {
+//     if (playerScore <= robotScore) {
+//         openLoserModal();
 //     }
-
-    
 // }
 
 
@@ -123,15 +129,16 @@ function updateScoreView() {
 function resetGame() {
     playerChoice.style.display = "none";
     robotChoice.style.display = "none";
-        
     playerScore = 0;
     robotScore = 0;
     updateScoreView();
-   
-    
+    resetTurns();
+    showAvatar(false);  
 }
 
-
+function resetTurns() {
+    trackTurns = 1;
+}
 
 /*
 High scores and score board modal open close functions
@@ -139,6 +146,8 @@ High scores and score board modal open close functions
 const modal = document.getElementById("score-modal");
 const modalBtn = document.getElementById("high-score-button");
 const closeBtn = document.getElementById("close-btn"); 
+const loserModal = document.getElementById("you-lost");
+const loserMessage = document.getElementsByClassName("modal-content");
 
 //event listeners for open and close modal on click
 modalBtn.addEventListener("click", openModal);
@@ -166,6 +175,7 @@ function sortScores(a, b) {
 /* 
 Open modal function and display score board
 */
+
 function openModal() {
     highScoresContainer.innerHTML = "";
     let scores =  readScores();
@@ -185,7 +195,9 @@ function openModal() {
         highScoresContainer.innerHTML = "No high scores. Play some more!"
     }
     modal.style.display = "block";
+    
 }
+
 
 /* 
 Close modal with button and outer window click
@@ -221,6 +233,7 @@ submitBtn.onclick = function () {
         });
         localStorage.setItem("highScores", JSON.stringify(highScores));
         openModal();
+        resetGame();
     }
 };
 
