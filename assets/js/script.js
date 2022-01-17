@@ -13,6 +13,7 @@ let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
 let trackTurns = 1;
+let bothChoices = document.getElementsByClassName("show-choices");
 
 /*
 Add event listeners to move buttons
@@ -23,10 +24,11 @@ for (let button of moveButtons) {
         let move = this.getAttribute("data-type");
         showAvatar(true);
         playGame(move);
+        showChoices(false);
     });
 }
 
-function showAvatar(shouldHide) {
+function showAvatar(shouldHide) { //Show player images before gameplay and hide when game starts
     for (let avatar of avatars) {
         avatar.style.display = shouldHide ? "none" : "inline-block"; 
     }
@@ -37,8 +39,15 @@ Add Event listener to Reset button
 */
 resetButton.addEventListener("click", function () {
     showAvatar(false);
+    showChoices(false);
     resetGame();
 });
+
+function showChoices(shouldHide) { //Hide choices when reset is clicked and show when game starts again
+    for (let choice of bothChoices) {
+        choice.style.display = shouldHide ? "none" : "inline-block"; 
+    }
+}
 
 
 /* 
@@ -54,16 +63,20 @@ function playGame(playerMove) {
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
     calculateWinner(playerMove, robotMove);
-    countTurns(trackTurns);
+    //countTurns(trackTurns);
 }
 
-function countTurns() {
-    let turnsNum = document.getElementById("game-rounds");
-    turnsNum.innerHTML = `"Round ${trackTurns++}/10"`;
-    
+// function countTurns() {
+//     let turnsNum = document.getElementById("game-rounds");
+//     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
+
+//     if (trackTurns === 11) {
+//         openModal();
+//         resetGame();
+//     }
 
     
-}
+// }
 
 
 
@@ -110,12 +123,11 @@ function updateScoreView() {
 function resetGame() {
     playerChoice.style.display = "none";
     robotChoice.style.display = "none";
-    playGame();
-
-
+        
     playerScore = 0;
     robotScore = 0;
     updateScoreView();
+   
     
 }
 
