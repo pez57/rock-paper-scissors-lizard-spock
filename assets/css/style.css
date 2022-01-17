@@ -78,6 +78,10 @@ button:hover {
 
 }
 
+.show-choices {
+    font-family: roboto, sans-serif;
+}
+
 .avatar {
     max-width: 50%;
 }
@@ -116,16 +120,12 @@ button:hover {
 
 }
 
-
-/*Score board*/
-
-.score-board {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 13em;
+.scores {
+    background: #1c1d21;
+    border-radius: 20%;
+    padding: 5px;
 }
+
 
 /* Rules */
 .rules-lander {
