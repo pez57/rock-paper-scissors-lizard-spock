@@ -64,9 +64,9 @@ function calculateWinner(player, robot) {
         return;
     }
 
-    /*
-     Game logic
-     */
+/*
+Game logic
+*/
     else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
         hasPlayerWon = true;
     } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
@@ -79,9 +79,9 @@ function calculateWinner(player, robot) {
         hasPlayerWon = true;
     }
 
-    /* 
-    Update score
-    */
+/* 
+Update score
+ */
     if (hasPlayerWon) {
         playerScore++;
     } else {
@@ -97,28 +97,34 @@ function updateScoreView() {
 }
 
 function resetGame() {
+    playerChoice.style.display = "none";
+    robotChoice.style.display = "none";
+    playGame();
+
 
     playerScore = 0;
     robotScore = 0;
     updateScoreView();
+    
 }
 
 
 
 /*
-Modal open close functions
+High scores and score board modal open close functions
 */
-
-
-const modal = document.getElementById("score-modal"); //get modal element
-const modalBtn = document.getElementById("high-score-button");//get open modal button
-const closeBtn = document.getElementById("close-btn"); //get close button
+const modal = document.getElementById("score-modal");
+const modalBtn = document.getElementById("high-score-button");
+const closeBtn = document.getElementById("close-btn"); 
 
 //event listeners for open and close modal on click
 modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
+/*
+Save scores to local storage and sort them into high scores
+*/
 function readScores() {
     let scoresJson = localStorage.getItem("highScores");
     let scores = JSON.parse(scoresJson);
@@ -134,6 +140,9 @@ function sortScores(a, b) {
     return b.score - a.score;
 }
 
+/* 
+Open modal function and display score board
+*/
 function openModal() {
     highScoresContainer.innerHTML = "";
     let scores =  readScores();
@@ -155,6 +164,9 @@ function openModal() {
     modal.style.display = "block";
 }
 
+/* 
+Close modal with button and outer window click
+*/
 function closeModal() {
     modal.style.display = "none";
 }
@@ -170,7 +182,6 @@ function outerClick(event) {
 /*
 Score Board Content
 */
-
 const inpName = document.getElementById("input-name");
 const submitBtn = document.getElementById("submit-btn");
 const highScoresContainer = document.querySelector(".high-scores");
@@ -194,7 +205,6 @@ submitBtn.onclick = function () {
 /*
 Slow video play rate
  */
-
 document.querySelector('video').playbackRate = 0.75;
 
 
