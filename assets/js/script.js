@@ -12,7 +12,7 @@ const avatars = document.getElementsByClassName("avatar");
 let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
-
+let trackTurns = 1;
 
 /*
 Add event listeners to move buttons
@@ -54,7 +54,18 @@ function playGame(playerMove) {
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
     calculateWinner(playerMove, robotMove);
+    countTurns(trackTurns);
 }
+
+function countTurns() {
+    let turnsNum = document.getElementById("game-rounds");
+    turnsNum.innerHTML = `"Round ${trackTurns++}/10"`;
+    
+
+    
+}
+
+
 
 function calculateWinner(player, robot) {
     let hasPlayerWon = false;
