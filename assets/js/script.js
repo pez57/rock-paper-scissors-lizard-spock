@@ -75,17 +75,10 @@ function countTurns() {
         openModal();
         if (trackTurns <= 11) {
             resetGame();
+            
         }
     }
 }
-
-// function lostGame() {
-//     if (playerScore <= robotScore) {
-//         openLoserModal();
-//     }
-// }
-
-
 
 function calculateWinner(player, robot) {
     let hasPlayerWon = false;
@@ -141,17 +134,15 @@ function resetTurns() {
     trackTurns = 1;
 }
 
+
 /*
 High scores and score board modal open close functions
 */
 const modal = document.getElementById("score-modal");
 const modalBtn = document.getElementById("high-score-button");
 const closeBtn = document.getElementById("close-btn");
-const loserModal = document.getElementById("you-lost");
-const loserMessage = document.getElementsByClassName("modal-content");
-
 //event listeners for open and close modal on click
-modalBtn.addEventListener("click", openModal);
+modalBtn.addEventListener("click", openModal,);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
@@ -180,8 +171,7 @@ Open modal function and display score board
 function openModal() {
     highScoresContainer.innerHTML = "";
     let scores = readScores();
-    let input = document.getElementById("inp-field");
-
+ 
     if (scores.length > 0) {
         let loopLimit = scores.length < 10 ? scores.length - 1 : 9;
 
@@ -191,13 +181,12 @@ function openModal() {
 
             const name = scores[i].player;
             const scoreValue = scores[i].score;
-            highScoresContainer.innerHTML += `${i + 1}. ${name}: ${scoreValue}<br/>`;
+            highScoresContainer.innerHTML += `${i + 1}. ${name} : ${scoreValue}<br/>`;
         }
     } else {
         highScoresContainer.innerHTML = "No high scores. Play some more!"
     }
     modal.style.display = "block";
-
 }
 
 

@@ -113,10 +113,10 @@ button:hover {
     padding: 1rem;
 }
 
-.button {
+.button, #submit-btn {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
-    padding: 1rem;
+    padding: 5px;
     border-radius: 10%;
     border: solid 3px;
     border-color: #4ea9d0;
@@ -126,7 +126,11 @@ button:hover {
 .button:hover {
     background-color: #1c1d21;
     color: #d9dbf1;
+}
 
+#submit-btn:hover {
+    background-color: #1c1d21;
+    color: #d9dbf1;
 }
 
 .scores {
@@ -210,6 +214,10 @@ fieldset {
 /*Media queries*/
 
 @media (max-width: 1230px) {
+    h1 {
+        font-size: 2em;
+    }
+
     .rules {
         flex-direction: column;
     }
@@ -249,4 +257,26 @@ fieldset {
 
     }
 
+}
+
+@media (max-width: 370px) {
+    h1 {
+        font-size: 95%;
+    }
+
+    h2 {
+        font-size: 95%
+    }
+    
+    h3 {
+        font-size: 95%;
+    }
+
+    .rules-lander{
+        font-size: 75%;
+    }
+
+    .player .rule-icon {
+        font-size: 3rem;
+    }
 }
