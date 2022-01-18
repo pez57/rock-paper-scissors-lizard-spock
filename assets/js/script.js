@@ -31,7 +31,7 @@ for (let button of moveButtons) {
 
 function showAvatar(shouldHide) { //Show player images before gameplay and hide when game starts
     for (let avatar of avatars) {
-        avatar.style.display = shouldHide ? "none" : "inline-block"; 
+        avatar.style.display = shouldHide ? "none" : "inline-block";
     }
 }
 
@@ -47,7 +47,7 @@ resetButton.addEventListener("click", function () {
 
 function showChoices(shouldHide) { //Hide choices when reset is clicked and show when game starts again
     for (let choice of bothChoices) {
-        choice.style.display = shouldHide ? "none" : "inline-block"; 
+        choice.style.display = shouldHide ? "none" : "inline-block";
     }
 }
 
@@ -71,11 +71,12 @@ function playGame(playerMove) {
 function countTurns() {
     let turnsNum = document.getElementById("game-rounds");
     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
-
     if (trackTurns === 11) {
         openModal();
-        
-    }    
+        if (trackTurns <= 11) {
+            resetGame();
+        }
+    }
 }
 
 // function lostGame() {
@@ -94,9 +95,9 @@ function calculateWinner(player, robot) {
         return;
     }
 
-/*
-Game logic
-*/
+    /*
+    Game logic
+    */
     else if (player === "rock" && (robot === "scissors" || robot === "lizard")) {
         hasPlayerWon = true;
     } else if (player === "paper" && (robot === "rock" || robot === "spock")) {
@@ -109,9 +110,9 @@ Game logic
         hasPlayerWon = true;
     }
 
-/* 
-Update score
- */
+    /* 
+    Update score
+     */
     if (hasPlayerWon) {
         playerScore++;
     } else {
@@ -133,7 +134,7 @@ function resetGame() {
     robotScore = 0;
     updateScoreView();
     resetTurns();
-    showAvatar(false);  
+    showAvatar(false);
 }
 
 function resetTurns() {
@@ -145,7 +146,7 @@ High scores and score board modal open close functions
 */
 const modal = document.getElementById("score-modal");
 const modalBtn = document.getElementById("high-score-button");
-const closeBtn = document.getElementById("close-btn"); 
+const closeBtn = document.getElementById("close-btn");
 const loserModal = document.getElementById("you-lost");
 const loserMessage = document.getElementsByClassName("modal-content");
 
@@ -178,7 +179,8 @@ Open modal function and display score board
 
 function openModal() {
     highScoresContainer.innerHTML = "";
-    let scores =  readScores();
+    let scores = readScores();
+    let input = document.getElementById("inp-field");
 
     if (scores.length > 0) {
         let loopLimit = scores.length < 10 ? scores.length - 1 : 9;
@@ -195,7 +197,7 @@ function openModal() {
         highScoresContainer.innerHTML = "No high scores. Play some more!"
     }
     modal.style.display = "block";
-    
+
 }
 
 
@@ -203,7 +205,8 @@ function openModal() {
 Close modal with button and outer window click
 */
 function closeModal() {
-    modal.style.display = "none";
+        modal.style.display = "none";
+        resetGame();
 }
 
 function outerClick(event) {
@@ -211,8 +214,6 @@ function outerClick(event) {
         modal.style.display = "none";
     }
 }
-
-
 
 /*
 Score Board Content
@@ -229,7 +230,8 @@ submitBtn.onclick = function () {
 
     if (player && score) {
         highScores.push({
-            player, score
+            player,
+            score
         });
         localStorage.setItem("highScores", JSON.stringify(highScores));
         openModal();
@@ -242,5 +244,3 @@ submitBtn.onclick = function () {
 Slow video play rate
  */
 document.querySelector('video').playbackRate = 0.75;
-
-

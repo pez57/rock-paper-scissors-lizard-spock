@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 /*Background Video*/
 #myMainVideo {
     position: absolute;
@@ -33,6 +34,7 @@ h1 {
     letter-spacing: 1px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin: 3px;
 }
 
 
@@ -48,6 +50,10 @@ h1 {
 
 .container p {
     font-size: 50px;
+}
+
+#prompt {
+    margin-top: 0;
 }
 
 .move {
@@ -74,8 +80,13 @@ button:hover {
     width: 75%;
     margin: auto;
     text-align: center;
-    background-color: rgb(78,169,208, 0.3);
+    background-color: rgb(78, 169, 208, 0.3);
 
+}
+
+#game-rounds {
+    padding-bottom: 10px;
+    font-family: roboto, sans-serif;
 }
 
 .show-choices {
@@ -85,8 +96,6 @@ button:hover {
 .avatar {
     max-width: 50%;
 }
-
-
 
 .player {
     width: 25%;
@@ -129,11 +138,12 @@ button:hover {
 
 /* Rules */
 .rules-lander {
-    background-color: rgb(28,29,33, 0.5);
+    background-color: rgb(28, 29, 33, 0.5);
     color: #d9dbf1;
 }
 
-.rules-lander, h2 {
+.rules-lander,
+h2 {
     text-align: center;
     padding-top: 5px;
 }
@@ -142,13 +152,11 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
 
 li {
     font-family: "Roboto", sans-serif;
-    
 }
 
 .rule-icon {
@@ -170,16 +178,16 @@ li {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #1c1d21;
 }
 
-.modal-content{
+.modal-content {
     background-color: #d9dbf1;
     margin: 5% auto;
     padding: 10px;
     width: 50%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 #close-btn {
@@ -188,9 +196,8 @@ li {
     font-size: 30px;
 }
 
-
-
-#close-btn:hover, .close-btn:focus{
+#close-btn:hover,
+.close-btn:focus {
     color: #4ea9d0;
     text-decoration: none;
     cursor: pointer;
@@ -206,18 +213,19 @@ fieldset {
     .rules {
         flex-direction: column;
     }
+
     li {
         list-style-type: none;
         letter-spacing: 2px;
     }
+
     h3 {
         letter-spacing: 2px;
     }
-
-
 }
+
 @media (max-width: 500px) {
-    .game-area{
+    .game-area {
         width: 100%;
     }
 

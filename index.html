@@ -23,7 +23,7 @@
     <!-- Game Play Area -->
     <section class="game-area">
         <div class="play-background">
-            <h2>Choose Your Move</h2>
+            <h2 id="prompt">Choose Your Move</h2>
             <div id = "game-rounds"></div>
             <button aria-label="rock" class="move move-rock" data-type="rock"><i class="far fa-hand-rock"></i></button>
             <button aria-label="paper" class="move move-paper" data-type="paper"><i
@@ -68,9 +68,9 @@
         <div id="score-modal" class="modal">
             <div class="modal-content">
                 <span id="close-btn"> <i class="fas fa-window-close"></i></span>
-                <fieldset>
+                <fieldset id="inp-field">
                     <legend>Enter Your Name</legend>
-                    <input id="input-name" type="text" placeholder="Your name...">
+                    <input id="input-name" type="text" placeholder="Your name..." required>
                     <button type="button" id="submit-btn">Submit</button>
                 </fieldset>
                 <fieldset>
