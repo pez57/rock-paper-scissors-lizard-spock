@@ -212,7 +212,7 @@ fieldset {
 }
 
 /*Media queries*/
-
+/*Smaller desktop screens*/
 @media (max-width: 1230px) {
     h1 {
         font-size: 2em;
@@ -231,7 +231,7 @@ fieldset {
         letter-spacing: 2px;
     }
 }
-
+/*Medium mobile device screens*/
 @media (max-width: 500px) {
     .game-area {
         width: 100%;
@@ -258,7 +258,7 @@ fieldset {
     }
 
 }
-
+/*Small mobile device screens*/
 @media (max-width: 370px) {
     h1 {
         font-size: 95%;
