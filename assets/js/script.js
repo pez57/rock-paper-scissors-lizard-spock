@@ -10,11 +10,16 @@ const playerChoice = document.getElementById("player-choice");
 const robotChoice = document.getElementById("robot-choice");
 const avatars = document.getElementsByClassName("avatar");
 const bothChoices = document.getElementsByClassName("show-choices");
+const inpName = document.getElementById("input-name");
+const submitBtn = document.getElementById("submit-btn");
+const highScoresContainer = document.querySelector(".high-scores");
+const modal = document.getElementById("score-modal");
+const modalBtn = document.getElementById("high-score-button");
+const closeBtn = document.getElementById("close-btn");
 let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
 let trackTurns = 1;
-
 
 /*
 Add event listeners to move buttons
@@ -51,7 +56,6 @@ function showChoices(shouldHide) { //Hide choices when reset is clicked and show
     }
 }
 
-
 /* 
 Main game functions
 */
@@ -73,16 +77,11 @@ function countTurns() {
     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
     if (trackTurns === 11) {
         openModal();
-        if (trackTurns <= 11) {
-            resetGame();
-            
-        }
     }
 }
 
 function calculateWinner(player, robot) {
     let hasPlayerWon = false;
-
     if (player === robot) {
         alert("It's a draw! Try again");
         return;
@@ -111,7 +110,6 @@ function calculateWinner(player, robot) {
     } else {
         robotScore++;
     }
-
     updateScoreView();
 }
 
@@ -134,15 +132,11 @@ function resetTurns() {
     trackTurns = 1;
 }
 
-
 /*
 High scores and score board modal open close functions
 */
-const modal = document.getElementById("score-modal");
-const modalBtn = document.getElementById("high-score-button");
-const closeBtn = document.getElementById("close-btn");
 //event listeners for open and close modal on click
-modalBtn.addEventListener("click", openModal,);
+modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
@@ -152,12 +146,10 @@ Save scores to local storage and sort them into high scores
 function readScores() {
     let scoresJson = localStorage.getItem("highScores");
     let scores = JSON.parse(scoresJson);
-
     if (!scores) { // If local storage is null create empty array
         scores = [];
     }
     return scores;
-
 }
 
 function sortScores(a, b) {
@@ -170,24 +162,20 @@ Open modal function and display score board
 
 function openModal() {
     highScoresContainer.innerHTML = "";
-    let scores = readScores();
- 
+    let scores = readScores(); 
     if (scores.length > 0) {
         let loopLimit = scores.length < 10 ? scores.length - 1 : 9;
-
         scores.sort(sortScores);
-
         for (let i = 0; i <= loopLimit; i++) {
-
             const name = scores[i].player;
             const scoreValue = scores[i].score;
             highScoresContainer.innerHTML += `${i + 1}. ${name} : ${scoreValue}<br/>`;
         }
     } else {
-        highScoresContainer.innerHTML = "No high scores. Play some more!"
+        highScoresContainer.innerHTML = "No high scores. Play some more!";
     }
     modal.style.display = "block";
-}
+ }
 
 
 /* 
@@ -207,16 +195,9 @@ function outerClick(event) {
 /*
 Score Board Content
 */
-const inpName = document.getElementById("input-name");
-const submitBtn = document.getElementById("submit-btn");
-const highScoresContainer = document.querySelector(".high-scores");
-
-
 submitBtn.onclick = function () {
-
     const player = inpName.value;
     const score = playerScore;
-
     if (player && score) {
         highScores.push({
             player,
@@ -227,7 +208,6 @@ submitBtn.onclick = function () {
         resetGame();
     }
 };
-
 
 /*
 Slow video play rate
