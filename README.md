@@ -34,7 +34,7 @@ Each clickable element on the website changes color, and the cursor changes to a
 * First Time Visitor Aims
     * As a first time visitor, I want to know what the purpose of the website is.
     * As a first time visitor, I want to know how to play the game.
-    * As a first time visitor, I want the game playe to be intuitive.
+    * As a first time visitor, I want the game play to be intuitive.
     * As a first time visitor, I want to be able to play the game multiple times.
     * As a first time visitor, I want to know the rules of the game.
     * As a first time visitor, I want to see the choice I made compared to the computer/Robot.
@@ -80,7 +80,28 @@ I used Balsamiq to draft the layout for the two main sections of the game. This 
 
 ## Deployment
 
+## Technologies Used
+
+
+
 ## Credits
+### Tools & Media
+* Fonts used supplied by [google fonts](https://fonts.google.com/)
+* Background video is a royalty free stock image from [pexels](https://pexels.com/)
+* Icons used made available by [fontawesome](https://fontawesome.com/)
+* Color Pallette constructed using the website [coolors](https://coolors.co/)
+* Player & Robot images are royalty free downloads from [toppng.com](https://toppng.com/free-image/erson-outline-icon-png-person-icon-png-white-PNG-free-PNG-Images_164688)
+* Wireframes made using [balsamiq](https://balsamiq.com/)
+
+### Coding Support & Advice
+* Code Institute study materials
+* JavaScript Tutorials I found helpful during this project:
+    * [w3schools](https://www.w3schools.com/jsref/)
+    * youTube: [traversymedia](https://www.youtube.com/c/TraversyMedia), [dcode](https://www.youtube.com/c/dcode-software)
+    * [stackoverflow.com](https://stackoverflow.com/)
+* Reuben Ferrante - Mentorship and guidence
+* Code Institute Slack Community - Help to resolve gitpod.io errors
+
 
 
 
