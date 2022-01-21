@@ -1,6 +1,7 @@
 # Rock Paper Scissors Lizard Spock
 ## About
 **Rock Paper Scissors Lizard Spock** is a browser based game of chance inspired by the classic Rock Paper Scissors hand game. The aim of this variation of the game is to beat the computer generated Robot within 10 moves by clicking on your desired move. Highest score wins! If the player wins they can submit their name onto the Highscores board. After submitting your name the game will automatically restart ready to be played again.
+![Responsiveness image](assets/images/responsiverpsls.png)
 
 ## Taget Audience
 The **Target Audience** for the site is aimed at users of all ages, specifically with an interest in sci-fi looking to play an intuitive and quick game of chance against the computer. The design leans into the sci-fi relation to the "Spock" move, and the layout was designed to be easy to play and navigate.
