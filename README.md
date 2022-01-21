@@ -51,5 +51,37 @@ Each clickable element on the website changes color, and the cursor changes to a
     * As the site owner, I want the user to return to the site.
     * As the site owner, I want the game to work as intended with random results for the Robot and scores incrementing on each won round.
 
-##
+## Design
+### Theme
+The theme of the site was inspired by the "Spock" move and I wanted to lean into the space travel/Star Trek aspects associated with the Vulcan hand sign. The background video represents space travel and the main color is based on a pastel blue simlar to Spock's uniform.
+
+### Colors
+
+The color scheme consits of two contrasting shades used for text and backgrounds, and one main feature color.
+* Raisin Black
+    * Used as the background color for divs, button default text and borders.
+* Lavender Web
+    * Used as the main text color.
+* Blue NCS
+    * Used as the feature color for gameplay area background and button borders.
+![color scheme image](assets/images/RPSLScolScheme.png)
+
+### Fonts
+I chose two fonts that compliment eachother that fit to my theme. The title and subtitle font is Orbitron which has the classic sci-fi look to it. 
+My score and other info font is Roboto.
+
+### Wireframes
+I used Balsamiq to draft the layout for the two main sections of the game. This helped me scope the amount of content needed to achieve a clean basic.
+![Wireframes image](assets/images/wireframesrpsls.png)
+
+## Testing
+
+## Bugs
+
+## Deployment
+
+## Credits
+
+
+
 
