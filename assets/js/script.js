@@ -16,6 +16,7 @@ const highScoresContainer = document.querySelector(".high-scores");
 const modal = document.getElementById("score-modal");
 const modalBtn = document.getElementById("high-score-button");
 const closeBtn = document.getElementById("close-btn");
+const inpFieldset = document.getElementById("inp-field");
 let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
@@ -68,24 +69,39 @@ function playGame(playerMove) {
     robotChoice.innerHTML = `<div>Robot chose ${robotMove}</div>
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
-    calculateWinner(playerMove, robotMove);
-    countTurns(trackTurns);
-}
+    let finalTurn = trackTurns === 10;
+    calculateTurnWinner(playerMove, robotMove);
 
-function countTurns() {
-    let turnsNum = document.getElementById("game-rounds");
-    turnsNum.innerHTML = `Round ${trackTurns++}/10`;
-    if (trackTurns === 11) {
-        openModal();
+    countTurns();
+    updateScoreView();
+
+    if (finalTurn) {
+        const isPlayerWinner = playerScore > robotScore;
+        endGame(isPlayerWinner);
     }
 }
 
-function calculateWinner(player, robot) {
+function countTurns() {
+    let turnsNum = document.getElementById("game-rounds");    
+    turnsNum.innerHTML = `Round ${trackTurns++}/10`;
+}
+
+function endGame(playerWon) {
+    if (playerWon) {
+        openModal();
+    } else {
+        alert ("Sorry you did not win! Play again");
+        resetGame();
+    }        
+}
+
+function calculateTurnWinner(player, robot) {
     let hasPlayerWon = false;
     if (player === robot) {
         alert("It's a draw! Try again");
         return;
     }
+
 
     /*
     Game logic
@@ -110,7 +126,6 @@ function calculateWinner(player, robot) {
     } else {
         robotScore++;
     }
-    updateScoreView();
 }
 
 function updateScoreView() {
@@ -131,6 +146,8 @@ function resetGame() {
 function resetTurns() {
     trackTurns = 1;
 }
+
+
 
 /*
 High scores and score board modal open close functions
@@ -160,7 +177,7 @@ function sortScores(a, b) {
 Open modal function and display score board
 */
 
-function openModal() {
+function openModal(finalTurn) {
     highScoresContainer.innerHTML = "";
     let scores = readScores(); 
     if (scores.length > 0) {
@@ -173,6 +190,9 @@ function openModal() {
         }
     } else {
         highScoresContainer.innerHTML = "No high scores. Play some more!";
+    }
+    if (finalTurn) {
+
     }
     modal.style.display = "block";
  }
