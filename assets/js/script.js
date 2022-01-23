@@ -85,10 +85,11 @@ function countTurns() {
     let turnsNum = document.getElementById("game-rounds");    
     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
 }
-
+let finishedGame = false;
 function endGame(playerWon) {
+    finishedGame = true;
     if (playerWon) {
-        openModal();
+        openModal(true);
     } else {
         alert ("Sorry you did not win! Play again");
         resetGame();
@@ -141,6 +142,7 @@ function resetGame() {
     updateScoreView();
     resetTurns();
     showAvatar(false);
+    finishedGame = false;
 }
 
 function resetTurns() {
@@ -153,7 +155,7 @@ function resetTurns() {
 High scores and score board modal open close functions
 */
 //event listeners for open and close modal on click
-modalBtn.addEventListener("click", openModal);
+modalBtn.addEventListener("click", scoreBoardClick);
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", outerClick);
 
@@ -192,9 +194,15 @@ function openModal(finalTurn) {
         highScoresContainer.innerHTML = "No high scores. Play some more!";
     }
     if (finalTurn) {
-
+        inpFieldset.style.display = "block";
+    } else {
+        inpFieldset.style.display = "none";
     }
     modal.style.display = "block";
+ }
+
+ function scoreBoardClick() {
+     openModal(false);
  }
 
 
@@ -202,13 +210,15 @@ function openModal(finalTurn) {
 Close modal with button and outer window click
 */
 function closeModal() {
-        modal.style.display = "none";
+    modal.style.display = "none";
+    if (finishedGame) {
         resetGame();
+    }        
 }
 
 function outerClick(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        closeModal();
     }
 }
 
@@ -224,7 +234,7 @@ submitBtn.onclick = function () {
             score
         });
         localStorage.setItem("highScores", JSON.stringify(highScores));
-        openModal();
+        openModal(false);
         resetGame();
     }
 };
