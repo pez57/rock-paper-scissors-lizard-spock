@@ -4,6 +4,17 @@
 Deployed link to site here: (to be inserted once deployed)
 ![Responsiveness image](assets/images/responsiverpsls.png)
 
+## Table of Contents
+* [Target Audience](#target-audience)
+* [Features](#features)
+* [UX](#user-experience)
+* [Design](#design)
+* [Testing](#testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+* [Technologies Used](technologies-used)
+* [Credits](#credits)
+
 ## Taget Audience
 The **Target Audience** for the site is aimed at users of all ages, specifically with an interest in sci-fi looking to play an intuitive and quick game of chance against the computer. The design leans into the sci-fi relation to the "Spock" move, and the layout was designed to be easy to play and navigate.
 
@@ -84,6 +95,17 @@ I used Balsamiq to draft the layout for the two main sections of the game. This 
 I have been using the Developer Tools tool in the Chrome browser throughout the project. I have been using this to test content design and layout by making small changes in the HTML and CSS style editors. 
 Developer tools was used to determine which screen sizes my media queries should target in order to be fully responsive.
 
+### Lighthouse
+I used Lighthouse to test the performance, accessability, best practices and SEO on both mobile and desktop size screens.
+* Desktop
+    * Performance: score fluctuated between 92% & 100% on multiple tests
+    * Accessability, Best Practices & SEO all scored 100% on multiple tests
+![Desktop Lighthouse score image](assets/images/desktoplighthouse.png)
+* Mobile
+    * Performance: score fluctuated between 85% & 92% on multiple tests
+    * Accessability, Best Practices & SEO all scored 100% on multiple tests
+![Mobile Lighthouse score image](assets/images/mobilelighthouse.png)
+
 ### Validation
 HTML5: I used [WC3](https://validator.w3.org/) to validate my HTML code with no errors or warnings to show.
 ![HTML validator image](assets/images/htmlval.png)
@@ -95,7 +117,6 @@ JavaScript: I used [JSHint](https://jshint.com/) to validate my JavaScript code 
 ![JavaScript Validator image](assets/images/jsvalidator.png)
 
 ### Testing Site Owner Aims
-
 * As the site owner, I want the game to be attractive and responsive.
     * I kept the design to a theme and made sure all buttons and scores are visible on all device sizes by using media queries in CSS.
 * As the site owner, I want the game to be instantly playable for the user.
@@ -105,9 +126,9 @@ JavaScript: I used [JSHint](https://jshint.com/) to validate my JavaScript code 
 * As the site owner, I want the game to work as intended with random results for the Robot and scores incrementing on each won round.
     * I have played the game throughout the process to check for correct funtionality.
 
-
-
 ## Bugs
+
+
 
 ## Deployment
 The website was deployed to github pages using the following steps:
