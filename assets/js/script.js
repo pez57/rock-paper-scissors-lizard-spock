@@ -150,8 +150,6 @@ function resetTurns() {
     trackTurns = 1;
 }
 
-
-
 /*
 High scores and score board modal open close functions
 */
