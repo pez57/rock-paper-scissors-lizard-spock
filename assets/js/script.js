@@ -1,5 +1,5 @@
 /*
-const DOM elements
+const DOM elements and global variables
 */
 const moveButtons = document.getElementsByClassName("move");
 const moves = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -21,6 +21,7 @@ let robotScore = 0;
 let playerScore = 0;
 let highScores = readScores();
 let trackTurns = 1;
+let finishedGame = false;
 
 /*
 Add event listeners to move buttons
@@ -85,7 +86,7 @@ function countTurns() {
     let turnsNum = document.getElementById("game-rounds");    
     turnsNum.innerHTML = `Round ${trackTurns++}/10`;
 }
-let finishedGame = false;
+
 function endGame(playerWon) {
     finishedGame = true;
     if (playerWon) {

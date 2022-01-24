@@ -1,6 +1,7 @@
 # Rock Paper Scissors Lizard Spock
 ## About
 **Rock Paper Scissors Lizard Spock** is a browser based game of chance inspired by the classic Rock Paper Scissors hand game. The aim of this variation of the game is to beat the computer generated Robot within 10 moves by clicking on your desired move. Highest score wins! If the player wins they can submit their name onto the Highscores board. After submitting your name the game will automatically restart ready to be played again.
+Deployed link to site here: (to be inserted once deployed)
 ![Responsiveness image](assets/images/responsiverpsls.png)
 
 ## Taget Audience
@@ -24,6 +25,9 @@ If the Player wins, a modal pops up with the option to enter their name and subm
 ![No High Scores image](assets/images/noscoresmodal.png)
 On multiple plays the high scores are displayed in order as shown below:
 ![High Scores image](assets/images/highscoremodal.png)
+### Player Loses or Draws the Game
+In the event the Player loses or draws against the Robot, an alert box will open as shown below. When the user clicks the ok button the game resets ready to play again.
+![Player Lost Game image](assets/images/youlost.png)
 ### Reset & Score Board Buttons
 The **Reset** button resets the game scores and rounds counter back to zero when ever it is clicked. 
 The **Score Board** button opens the High Scores modal and can be close by either clicking the close button or outside of the modal in the shaded window of the game.
@@ -76,13 +80,49 @@ I used Balsamiq to draft the layout for the two main sections of the game. This 
 ![Wireframes image](assets/images/wireframesrpsls.png)
 
 ## Testing
+### Developer Tools
+I have been using the Developer Tools tool in the Chrome browser throughout the project. I have been using this to test content design and layout by making small changes in the HTML and CSS style editors. 
+Developer tools was used to determine which screen sizes my media queries should target in order to be fully responsive.
+
+### Validation
+HTML5: I used [WC3](https://validator.w3.org/) to validate my HTML code with no errors or warnings to show.
+![HTML validator image](assets/images/htmlval.png)
+
+CSS: I also  used [WC3](https://validator.w3.org/) to validate my CSS code with no error found.
+![CSS validator image](assets/images/css3val.png)
+
+JavaScript: I used [JSHint](https://jshint.com/) to validate my JavaScript code with no errors and one warning. 
+![JavaScript Validator image](assets/images/jsvalidator.png)
+
+### Testing Site Owner Aims
+
+* As the site owner, I want the game to be attractive and responsive.
+    * I kept the design to a theme and made sure all buttons and scores are visible on all device sizes by using media queries in CSS.
+* As the site owner, I want the game to be instantly playable for the user.
+    * The button hover styling and layout prompts the user to click.
+* As the site owner, I want the user to return to the site.
+    * The game saves previous scores to local storage so they can view their scores from previous site visits. 
+* As the site owner, I want the game to work as intended with random results for the Robot and scores incrementing on each won round.
+    * I have played the game throughout the process to check for correct funtionality.
+
+
 
 ## Bugs
 
 ## Deployment
+The website was deployed to github pages using the following steps:
+
+* I Clicked on my repository for rock-paper-scissors-lizard-spock
+* I Clicked settings tab and navigated down to "Pages"
+* I Selected "Main" in branch drop down box
+* I Clicked "save" which produced the live link which can be viewed here (to be inserted once deployed)
 
 ## Technologies Used
-
+* HTML5: Used to make the structure and content of the site.
+* CSS3: Used to style the site content and appearance.
+* JavaScript: Used to make the website interactive and gameplay functional.
+* GITPOD: Used to code the website
+* GITHUB: Used to store, deploy and host the site
 
 
 ## Credits
@@ -93,6 +133,7 @@ I used Balsamiq to draft the layout for the two main sections of the game. This 
 * Color Pallette constructed using the website [coolors](https://coolors.co/)
 * Player & Robot images are royalty free downloads from [toppng.com](https://toppng.com/free-image/erson-outline-icon-png-person-icon-png-white-PNG-free-PNG-Images_164688)
 * Wireframes made using [balsamiq](https://balsamiq.com/)
+* Favicon downloaded from [favicon.io](https://favicon.io/)
 
 ### Coding Support & Advice
 * Code Institute study materials
