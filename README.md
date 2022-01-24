@@ -41,7 +41,7 @@ In the event the Player loses or draws against the Robot, an alert box will open
 ![Player Lost Game image](assets/images/youlost.png)
 ### Reset & Score Board Buttons
 The **Reset** button resets the game scores and rounds counter back to zero when ever it is clicked. 
-The **Score Board** button opens the High Scores modal and can be close by either clicking the close button or outside of the modal in the shaded window of the game.
+The **Score Board** button opens the High Scores modal and can be closed by either clicking the close button or outside of the modal in the shaded window of the game.
 ### Hover
 Each clickable element on the website changes color, and the cursor changes to a pointer when hovered over with the mouse. This is to let the user intuitively recognise that they are able to click the button.
 
