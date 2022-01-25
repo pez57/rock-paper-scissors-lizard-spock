@@ -30,16 +30,18 @@ The five gameplay buttons are displayed under the "Choose your move" subtitle. W
 The **Rules** section is below the gameplay area and displays which move combinations win and lose. This section collapses into a column on smaller screens to keep the design tidy.
 ![Rules Image](assets/images/rulesfature.png)
 ### Win Lose or Draw
-There are three possible outcomes per turn. To win, lose or draw. If the Player wins, they score one point, or if the player loses the Robot scores one point. But if there is a draw an Alert box opens displaying the turn was a draw and no points are scored.
-![Draw Alet box image](assets/images/drawfeature.png)
+There are three possible outcomes per turn. To win, lose or draw. If the Player wins, they score one point, or if the player loses the Robot scores one point. But if there is a draw no points are scored.
+
 ### Player Wins Game
 If the Player wins, a modal pops up with the option to enter their name and submit it onto the High Scores board. The Player's first won game will display the modal as shown below:
 ![No High Scores image](assets/images/noscoresmodal.png)
 On multiple plays the high scores are displayed in order as shown below:
 ![High Scores image](assets/images/highscoremodal.png)
-### Player Loses or Draws the Game
-In the event the Player loses or draws against the Robot, an alert box will open as shown below. When the user clicks the ok button the game resets ready to play again.
-![Player Lost Game image](assets/images/youlost.png)
+### Player Loses the Game
+In the event the Player loses against the Robot, an alert box will open as shown below. When the user clicks the ok button the game resets ready to play again.
+![Player Lost Game image](assets/images/sorryyoulost.png)
+### The Game Ends on a Draw
+In the event of a draw, the game will automatically reset ready to play again.
 ### Reset & Score Board Buttons
 The **Reset** button resets the game scores and rounds counter back to zero whenever it is clicked. 
 The **Score Board** button opens the High Scores modal and can be closed by either clicking the close button or outside of the modal in the shaded window of the game.
@@ -81,7 +83,7 @@ The color scheme consists of two contrasting shades used for text and background
     * Used as the main text color.
 * Blue NCS
     * Used as the feature color for gameplay area background and button borders.
-![color scheme image](assets/images/RPSLScolScheme.png)
+![color scheme image](assets/images/rpslscolors.png)
 
 ### Fonts
 I chose two fonts that complement each other & fit to my theme. The title and subtitle font is Orbitron which has the classic sci-fi look to it. 
@@ -132,6 +134,9 @@ As well as playing the game myself, it has been played by three other people who
 
 In order to make the rules info correct, I made a reference table to compare the moves which can be seen below.
 ![rules table](assets/images/rulestable.png)
+
+### Debugging
+I used the "sources" tab in developer tools to test small edits in JavaScript. This process helped me fix errors and test adjustments to functions.
 
 ## Bugs
 * Resolved Bugs

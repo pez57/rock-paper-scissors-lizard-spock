@@ -30,15 +30,17 @@ for (let button of moveButtons) {
     button.addEventListener("click", function (event) {
         event.preventDefault();
         let move = this.getAttribute("data-type");
-        showAvatar(true);
+        showAvatar(false);
         playGame(move);
-        showChoices(false);
     });
 }
 
-function showAvatar(shouldHide) { //Show player images before gameplay and hide when game starts
+/*
+Show player images before gameplay and hide when game starts
+*/
+function showAvatar(shouldShow) { 
     for (let avatar of avatars) {
-        avatar.style.display = shouldHide ? "none" : "inline-block";
+        avatar.style.display = shouldShow ? "inline-block" : "none";
     }
 }
 
@@ -46,15 +48,19 @@ function showAvatar(shouldHide) { //Show player images before gameplay and hide 
 Add Event listener to Reset button
 */
 resetButton.addEventListener("click", function () {
-    showAvatar(false);
-    showChoices(false);
+    showAvatar(true);
+    showChoices(true);
     resetGame();
     resetTurns();
 });
 
-function showChoices(shouldHide) { //Hide choices when reset is clicked and show when game starts again
+
+/*
+Hide choices when reset is clicked and show when game starts again
+*/
+function showChoices(shouldShow) {
     for (let choice of bothChoices) {
-        choice.style.display = shouldHide ? "none" : "inline-block";
+        choice.style.display = shouldShow ? "inline-block" : "none";
     }
 }
 
@@ -62,14 +68,16 @@ function showChoices(shouldHide) { //Hide choices when reset is clicked and show
 Main game functions
 */
 function playGame(playerMove) {
+    const robotRandom = Math.floor(Math.random() * moves.length);
+    const robotMove = moves[robotRandom];
+
     playerChoice.innerHTML = `<div>You chose ${playerMove}</div>
     <i class="rule-icon far fa-hand-${playerMove}"></i>
     `;
-    const robotRandom = Math.floor(Math.random() * moves.length);
-    const robotMove = moves[robotRandom];
     robotChoice.innerHTML = `<div>Robot chose ${robotMove}</div>
     <i class="rule-icon far fa-hand-${robotMove}"></i>
     `;
+
     let finalTurn = trackTurns === 10;
     calculateTurnWinner(playerMove, robotMove);
 
@@ -77,9 +85,11 @@ function playGame(playerMove) {
     updateScoreView();
 
     if (finalTurn) {
-        const isPlayerWinner = playerScore > robotScore;
-        endGame(isPlayerWinner);
+        endGame();
+        showChoices(false);
+        return;
     }
+    showChoices(true);
 }
 
 function countTurns() {
@@ -89,10 +99,14 @@ function countTurns() {
 
 function endGame(playerWon) {
     finishedGame = true;
-    if (playerWon) {
+    if (playerScore > robotScore) {
         openModal(true);
+    }
+    else if (playerScore == robotScore) {
+        alert ("It's a draw!");
+        resetGame();
     } else {
-        alert ("Sorry you did not win! Play again");
+        alert ("Sorry you lost! Play again");
         resetGame();
     }        
 }
@@ -141,7 +155,7 @@ function resetGame() {
     robotScore = 0;
     updateScoreView();
     resetTurns();
-    showAvatar(false);
+    showAvatar(true);
     finishedGame = false;
 }
 
