@@ -100,7 +100,6 @@ function endGame(playerWon) {
 function calculateTurnWinner(player, robot) {
     let hasPlayerWon = false;
     if (player === robot) {
-        alert("It's a draw! Try again");
         return;
     }
 
