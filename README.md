@@ -45,10 +45,15 @@ In the event of a draw, and alert will pop up displaying "It's a draw!" message.
 
 ![Draw Game image](assets/images/itsadraw.png)
 ### Reset & Score Board Buttons
+<<<<<<< HEAD
 The **Reset** button resets the game scores and rounds counter back to zero whenever it is clicked. 
 The **Score Board** button opens the High Scores modal and can be closed by either clicking the close button or outside of the modal in the shaded window of the game.
 If the Score board button is clicked mid-game, the input field is hidden and only displays the leaderboard.
 ![Midgame Score Board image](assets/images/midgamescoreboard.png)
+=======
+The **Reset** button resets the game scores and rounds counter back to zero when ever it is clicked. 
+The **Score Board** button opens the High Scores modal and can be closed by either clicking the close button or outside of the modal in the shaded window of the game.
+>>>>>>> 08363eb5309124a740426bcea0b1f5cf9b8c4fc3
 ### Hover
 Each clickable element on the website changes color, and the cursor changes to a pointer when hovered over with the mouse. This is to let the user intuitively recognize that they can click the button.
 
