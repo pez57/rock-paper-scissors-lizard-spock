@@ -190,7 +190,6 @@ function sortScores(a, b) {
 /* 
 Open modal function and display score board
 */
-
 function openModal(finalTurn) {
     highScoresContainer.innerHTML = "";
     let scores = readScores(); 

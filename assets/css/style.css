@@ -22,9 +22,7 @@ video {
     object-fit: fill;
 }
 
-
 /* Title */
-
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -37,7 +35,6 @@ h1 {
 
 
 /*Game Play Area*/
-
 .container {
     display: flex;
     flex-direction: row;
@@ -66,14 +63,11 @@ h1 {
     background-color: #d9dbf1;
 }
 
-
 button:hover {
     background-color: #1c1d21;
     color: #d9dbf1;
     cursor: pointer;
 }
-
-
 
 .game-area {
     width: 75%;
@@ -159,7 +153,6 @@ h2 {
     justify-content: center;
 }
 
-
 li {
     font-family: "Roboto", sans-serif;
 }
@@ -232,6 +225,7 @@ fieldset {
         letter-spacing: 2px;
     }
 }
+
 /*Medium mobile device screens*/
 @media (max-width: 500px) {
     .game-area {
@@ -257,8 +251,8 @@ fieldset {
         width: 75%;
 
     }
-
 }
+
 /*Small mobile device screens*/
 @media (max-width: 370px) {
     h1 {
