@@ -41,10 +41,14 @@ On multiple plays the high scores are displayed in order as shown below:
 In the event the Player loses against the Robot, an alert box will open as shown below. When the user clicks the ok button the game resets ready to play again.
 ![Player Lost Game image](assets/images/sorryyoulost.png)
 ### The Game Ends on a Draw
-In the event of a draw, the game will automatically reset ready to play again.
+In the event of a draw, and alert will pop up displaying "It's a draw!" message. When user clicks Ok the game will reset ready to play again.
+
+![Draw Game image](assets/images/itsadraw.png)
 ### Reset & Score Board Buttons
 The **Reset** button resets the game scores and rounds counter back to zero whenever it is clicked. 
 The **Score Board** button opens the High Scores modal and can be closed by either clicking the close button or outside of the modal in the shaded window of the game.
+If the Score board button is clicked mid-game, the input field is hidden and only displays the leaderboard.
+![Midgame Score Board image](assets/images/midgamescoreboard.png)
 ### Hover
 Each clickable element on the website changes color, and the cursor changes to a pointer when hovered over with the mouse. This is to let the user intuitively recognize that they can click the button.
 
@@ -135,9 +139,6 @@ As well as playing the game myself, it has been played by three other people who
 In order to make the rules info correct, I made a reference table to compare the moves which can be seen below.
 ![rules table](assets/images/rulestable.png)
 
-### Debugging
-I used the "sources" tab in developer tools to test small edits in JavaScript. This process helped me fix errors and test adjustments to functions.
-
 ## Bugs
 * Resolved Bugs
     * Draw result on turn added a point to Robot Score
@@ -148,6 +149,8 @@ I used the "sources" tab in developer tools to test small edits in JavaScript. T
         * Solution: use JSON stringify and parse.
     * Background video was distracting
         * Solution: slow down playbackRate to 0.75
+    * If Player lost the game, the final move would still be visible above the avatar.
+        Solution: Reversed the logic of both functions and set their default value to true. Adding a game draw scenario 
 
 ## Future Improvements
 * Replace the alert boxes with modals to improve user experience
@@ -155,8 +158,13 @@ I used the "sources" tab in developer tools to test small edits in JavaScript. T
 * Add sound effects to the clicks
 
 ## Deployment
-The website was deployed to GitHub pages using the following steps:
+### Creating a Repository
+* I logged into my GitHub account and clicked the green button near the top left of the page displaying the text 'NEW'.
+* This took me to a page with the option to create a new repository. Under the repository template I clicked on the code institute template.
+* I chose a name for my repository and then clicked the create repository button.
+* I opened the new repository and clicked the green gitpod button to create a new workspace in Git Pod for writing and editing my code to develop the website.
 
+### The website was deployed to GitHub pages using the following steps:
 * I Clicked on my repository for rock-paper-scissors-lizard-spock
 * I Clicked the settings tab and navigated down to "Pages"
 * I Selected "Main" in the branch drop-down box
